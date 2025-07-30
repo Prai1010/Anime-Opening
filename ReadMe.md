@@ -1,0 +1,22 @@
+# Animes:
+- Black Clover - Black Catcher Op 10
+- Fire Force - Veil Ending
+- Konosuba - Fantastic Dreamer op 1
+- Dandandan Op 2 - On the way - Aina 
+- SAO Alicization - ADAMAS LiSa
+- Call Of The Night Op 1 - Daten By Creepy Nuts
+- Call of The Night Op 2 - Mirage By Creepy Nuts
+- SAO Op 1 - Crossing Field
+- My Hero Academia Vigilanties - Kekka Orai Op1
+- Blue Exorcist- Core Pride Op 1
+- Tokyo Ghoul Re: Asyphia op 1
+- Tokyo Ghoul - Glassy Sky (OST)
+- My Hero Academia - Odd Future - Uverworld (Op 4)
+- Solo Leveling Op 1 Level (Sawano Hiryouki) 
+- Solo Leveling Op 2 ReAwawker - LiSa
+- One Punch Man Op 1
+- Fire Force op 2- Spark Again 
+- One Piece- Over The Top 
+- One Piece - Hard Knock Days 
+- Lucky Star Op 1 
+- Ouran High School Host Club Op
