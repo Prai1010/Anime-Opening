@@ -218,5 +218,119 @@
         "My Hero Academia",
         "JoJo\u2019s Bizarre Adventure"
       ]
-    }
+    },
+    [
+        {
+          "id": 21,
+          "file": "21_blackclover_blackcatcher.mp3",
+          "answer": "Black Clover",
+          "choices": [
+            "Black Clover",
+            "Bleach",
+            "Jujutsu Kaisen",
+            "My Hero Academia"
+          ]
+        },
+        {
+          "id": 22,
+          "file": "22_konosuba_fantasticdreamer.mp3",
+          "answer": "KonoSuba",
+          "choices": [
+            "KonoSuba",
+            "Lucky Star",
+            "The Devil is a Part-Timer",
+            "Miss Kobayashi's Dragon Maid"
+          ]
+        },
+        {
+          "id": 23,
+          "file": "23_dandadan_ontheway.mp3",
+          "answer": "Dandadan",
+          "choices": [
+            "Dandadan",
+            "Chainsaw Man",
+            "Jujutsu Kaisen",
+            "Mob Psycho 100"
+          ]
+        },
+        {
+          "id": 24,
+          "file": "24_callofthenight_daten.mp3",
+          "answer": "Call of the Night",
+          "choices": [
+            "Call of the Night",
+            "Noragami",
+            "Tokyo Ghoul",
+            "Bleach"
+          ]
+        },
+        {
+          "id": 25,
+          "file": "25_mhavigilantes_kekkaorai.mp3",
+          "answer": "My Hero Academia: Vigilantes",
+          "choices": [
+            "My Hero Academia: Vigilantes",
+            "My Hero Academia",
+            "Jujutsu Kaisen",
+            "One Punch Man"
+          ]
+        },
+        {
+          "id": 26,
+          "file": "26_blueexorcist_corepride.mp3",
+          "answer": "Blue Exorcist",
+          "choices": [
+            "Blue Exorcist",
+            "Black Clover",
+            "Attack on Titan",
+            "Fullmetal Alchemist: Brotherhood"
+          ]
+        },
+        {
+          "id": 27,
+          "file": "27_tokyoghoulre_asphyxia.mp3",
+          "answer": "Tokyo Ghoul:re",
+          "choices": [
+            "Tokyo Ghoul:re",
+            "Tokyo Ghoul",
+            "Death Note",
+            "Parasyte"
+          ]
+        },
+        {
+          "id": 28,
+          "file": "28_onepiece_overthetop.mp3",
+          "answer": "One Piece",
+          "choices": [
+            "One Piece",
+            "Dragon Ball Super",
+            "Fairy Tail",
+            "Bleach"
+          ]
+        },
+        {
+          "id": 29,
+          "file": "29_luckystar_op1.mp3",
+          "answer": "Lucky Star",
+          "choices": [
+            "Lucky Star",
+            "K-On!",
+            "KonoSuba",
+            "Azumanga Daioh"
+          ]
+        },
+        {
+          "id": 30,
+          "file": "30_onepunchman_op1.mp3",
+          "answer": "One Punch Man",
+          "choices": [
+            "One Punch Man",
+            "Mob Psycho 100",
+            "Attack on Titan",
+            "Naruto: Shippuden"
+          ]
+        }
+      ]
+      
   ]
+  
