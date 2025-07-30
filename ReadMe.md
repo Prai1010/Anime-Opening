@@ -20,3 +20,5 @@
 - One Piece - Hard Knock Days 
 - Lucky Star Op 1 
 - Ouran High School Host Club Op
+- Classroom Of The Elite Op 2 - Dance in The Game
+- Classroom of The Elite Op 3 - Minor Piece 
