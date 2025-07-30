@@ -6,27 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anime OP PRO</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+    integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4">
-  <div class="max-w-xl w-full text-center space-y-6">
-    <h1 class="text-4xl font-bold text-red-500 tracking-wide drop-shadow-lg">Anime OP PRO</h1>
-
-    <button id="startBtn" class="px-6 py-2 bg-red-600 hover:bg-red-700 rounded text-white font-semibold shadow-md">
-      Start Game
-    </button>
-
-    <div id="gameArea" class="space-y-4" style="display: none;">
-      <button id="playBtn" class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded font-medium shadow">
-        🔊 Play Audio
+  <div class="max-w-xl w-full text-center space-y-6 ">
+    <div id="gameMenu" class="hidden">
+      <h1 class="text-4xl font-bold text-red-500 tracking-wide drop-shadow-lg">Anime OP PRO</h1>
+      <button id="startBtn" class="px-6 py-2 bg-red-600 hover:bg-red-700 rounded text-white font-semibold shadow-md">
+        Start Game
       </button>
 
+    </div>
+
+
+    <div id="gameArea" class="space-y-4">
+      <div>
+        <audio src=""></audio>
+        <div class="flex justify-between">
+          <button id="playBtn" class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded font-medium shadow">
+            🔊 Play Audio
+          </button>
+          <p id="currentQues"></p>
+        </div>
+      </div>
+
+
       <div id="choices" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice 1</button>
-        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice 2</button>
-        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice 3</button>
-        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice 4</button>
+        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice
+          1</button>
+        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice
+          2</button>
+        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice
+          3</button>
+        <button class="choiceBtn px-4 py-2 bg-gray-800 hover:bg-red-700 rounded border border-red-500 transition">Choice
+          4</button>
       </div>
 
       <p id="message" class="text-lg font-semibold text-red-400"></p>
