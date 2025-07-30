@@ -2,31 +2,42 @@ let animeData = {};
 let userInput = {
   current: 0,
   currentRaw: "",
-  points: 0
+  points: 0,
 };
 
 let timerInterval;
 const TIME_LIMIT = 10;
 
+// 🔀 Shuffle utility
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function getData() {
   fetch("./data.json")
     .then((res) => res.json())
     .then((data) => {
+      shuffleArray(data); // Shuffle questions
       animeData.data = data;
-      localStorage.setItem("data", JSON.stringify(animeData));
+      updateDom(); // Only update DOM after data is loaded
+    })
+    .catch((err) => {
+      $("#gameWrapper").html(
+        `<p class="text-red-400">Failed to load data. Make sure <code>data.json</code> exists.</p>`
+      );
     });
 }
 
 function startTimer() {
   let timeLeft = TIME_LIMIT;
   $("#timer").text(`Time: ${timeLeft}`);
-
   clearInterval(timerInterval);
-
   timerInterval = setInterval(() => {
     timeLeft--;
     $("#timer").text(`Time: ${timeLeft}`);
-
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       endAudioPlayback();
@@ -46,35 +57,33 @@ function updateScore() {
 }
 
 function updateDom() {
-  $("#currentQues").text(userInput.current + 1);
+  const question = animeData.data[userInput.current];
+
+  // Reset audio
+  const audioEl = document.querySelector("audio");
+  audioEl.pause();
+  audioEl.currentTime = 0;
+
+  $("#currentQues").text("Question: "+(userInput.current + 1));
   $(".choiceBtn").each((ind, ele) => {
-    $(ele)
-      .text(animeData.data[userInput.current].choices[ind])
-      .removeAttr("disabled");
+    $(ele).text(question.choices[ind]).removeAttr("disabled");
   });
 
-  $("audio").attr("src", "audio/" + animeData.data[userInput.current].file);
+  $("audio").attr("src", "audio/" + question.file);
   $("#playBtn").prop("disabled", false).text("Play Audio");
   $("#message").text("");
-  $("#nextBtn").hide();
+
+  $("#nextBtn").addClass("hidden opacity-0").removeClass("opacity-100");
   updateScore();
   $("#timer").text(`Time: ${TIME_LIMIT}`);
 }
 
 $(document).ready(() => {
-  if (localStorage.getItem("data") === null) {
-    getData();
-    localStorage.setItem("user", JSON.stringify(userInput));
-  } else {
-    animeData = JSON.parse(localStorage.getItem("data"));
-    userInput = JSON.parse(localStorage.getItem("user"));
-  }
-
-  updateDom();
+  getData();
 
   $("#startBtn").click(() => {
     $("#gameMenu").addClass("hidden");
-    $("#gameArea").removeClass("hidden");
+    $("#gameWrapper").removeClass("hidden"); // Fix visibility
   });
 
   $("#playBtn").click(() => {
@@ -109,26 +118,33 @@ $(document).ready(() => {
     }
 
     $(".choiceBtn").attr("disabled", true);
-    $("#nextBtn").show();
+
+    $("#nextBtn").removeClass("hidden opacity-0").addClass("opacity-100");
     updateScore();
-    localStorage.setItem("user", JSON.stringify(userInput));
   });
 
   $("#nextBtn").click(() => {
-    userInput.current++;
+    $("#nextBtn").addClass("neon-out");
 
-    if (userInput.current >= animeData.data.length) {
-      $("#gameArea").html(`
-        <h2 class="text-2xl font-bold text-red-500">Game Over</h2>
-        <p class="text-lg mt-2">Final Score: ${userInput.points} / ${animeData.data.length}</p>
-        <button onclick="location.reload()" class="mt-4 px-6 py-2 bg-red-600 hover:bg-red-700 rounded text-white shadow">
-          Restart Game
-        </button>
-      `);
-      localStorage.removeItem("user");
-      return;
-    }
+    setTimeout(() => {
+      userInput.current++;
 
-    updateDom();
+      if (userInput.current >= animeData.data.length) {
+        $("#gameWrapper").html(`
+          <h2 class="text-2xl font-bold text-pink-500">Game Over</h2>
+          <p class="text-lg mt-4">Final Score: ${userInput.points} / ${animeData.data.length}</p>
+          <button onclick="location.reload()" class="mt-6 px-6 py-3 bg-pink-600 hover:bg-pink-700 rounded-xl text-white font-bold shadow-lg btn-glow">
+            Restart Game
+          </button>
+        `);
+        $("#message").text("")
+        return;
+      }
+
+      $("#nextBtn")
+        .removeClass("neon-out opacity-100")
+        .addClass("hidden opacity-0");
+      updateDom();
+    }, 400);
   });
 });
